@@ -65,6 +65,7 @@ class WidgetDao {
   Future<List<Map<String, dynamic>>> toggleCollect(int id) async {
     final db = await storage.db;
     var data = await db.rawQuery('SELECT collected FROM widget WHERE id = ?', [id]);
+    print("查询收藏"+"${data.toString()}");
     var collected = data.toList()[0]['collected']==1;
     print('collected:$collected');
     return await db.rawQuery(

@@ -22,17 +22,18 @@ class WidgetDbRepository implements WidgetRepository {
   }
 
   @override
-  Future<List<WidgetModel>> loadWidgets(WidgetFamily family) async {
+  Future<List<WidgetModel>> loadWidgets(WidgetFamily family) async {//根据类型查询控件
 
     var data = await _widgetDao.queryByFamily(family);
     var widgets = data.map((e) => WidgetPo.fromJson(e)).toList();
+    print("获取控件数据"+"${widgets.length}+=====${widgets.toString()}");
     return widgets.map(WidgetModel.fromPo).toList();
   }
 
   @override
   Future<List<WidgetModel>> loadCollectWidgets() async {
     var data = await _widgetDao.queryCollect();
-    var widgets = data.map((e) => WidgetPo.fromJson(e)).toList();
+    var widgets = data.map((e) => WidgetPo.fromJson(e)).toList();//相当于List<Map<String, dynamic>>.map((e) => WidgetPo.fromJson(e))//e指每一个Map<String, dynamic>
     var list = widgets.map(WidgetModel.fromPo).toList();
     return list;
   }

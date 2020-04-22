@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutterwidgets/views/pages/navigation/UnitNavigation.dart';
+import 'package:flutterwidgets/views/pages/detail/widget_detail_page.dart';
+import 'package:flutterwidgets/views/pages/navigation/unit_navigation.dart';
 
 
 import 'utils/router_utils.dart';
@@ -32,6 +33,8 @@ class Router {
 
       case nav:
         return Left2RightRouter(child: UnitNavigation());
+      case widget_detail:
+        return Right2LeftRouter(child: WidgetDetailPage());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(

@@ -13,7 +13,7 @@ class UnitSplash extends StatefulWidget {
   }
 }
 
-class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
+class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {//TickerProviderStateMixin适用于多AnimationController的情况。
   AnimationController _controller;
   AnimationController _secondController;
   double _factor;
@@ -47,7 +47,7 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
       }))
       ..addStatusListener((s) {
         if (s == AnimationStatus.completed) {
-//          Navigator.of(context).pushReplacementNamed(Router.nav);
+          Navigator.of(context).pushReplacementNamed(Router.nav);
         }
       });
     _curveAnim = CurvedAnimation(
@@ -77,6 +77,8 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
             ),
           ),
           buildText(winH, winW),
+          buildHead(),
+          buildPower(),
         ],
       ),
     );
@@ -123,6 +125,7 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
       ],
     );
 
+    //在水平方向时，你只能指定left、right、width三个属性中的两个，如指定left和width后，right会自动算出(left+width)，如果同时指定三个属性则会报错，垂直方向同理。
     return Positioned(
       top: winH / 1.55,
       child: Container(
@@ -135,23 +138,54 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
           child: AnimatedOpacity(
               duration: Duration(milliseconds: 300),
               opacity: _animEnd ? 1.0 : 0.0,
-              child: ShaderMask(
+              child: ShaderMask(//ShaderMask是用于实现子控件渐变的控件
                   shaderCallback: _buildShader,
                   child: Text(
-                    'Flutter Unit',
+                    '小官在江湖',
                     style: shadowStyle,
                   ))),
         ),
       ),
     );
   }
-  final colors = [Colors.red, Colors.yellow, Colors.blue];
+  final colors = [Colors.pink, Colors.cyanAccent, Colors.red];
 
-  Shader _buildShader(Rect bounds) => RadialGradient(
+  Shader _buildShader(Rect bounds) => RadialGradient(//Shader Function(Rect bounds);
       center: Alignment.topLeft,
-      radius: 1.0,
+      radius: 1.2,
       tileMode: TileMode.mirror,
       colors: colors)
       .createShader(bounds);
 
+  Widget buildHead() {
+    return SlideTransition(
+        position: Tween<Offset>(
+          end: Offset(0, 0),
+          begin: Offset(0, -5),
+        ).animate(_controller),
+        child: Container(
+          height: 35,
+          width: 35,
+          child: Image.asset('assets/images/icon_head.png'),
+        ));
+  }
+  Widget buildPower() {
+    return Positioned(
+      bottom: 30,
+      right: 30,
+      child: AnimatedOpacity(//让一个widget淡入或者淡出效果,FadeTransition是自定义的，可以通过control来控制。而AnimatedOpacity是个内置的动画，不需要管理那么多，就简单使用效果。
+          duration: Duration(milliseconds: 1000),
+          opacity: _animEnd ? 1.0 : 0.0,
+          child: Text("小官在江湖出品",
+              style: TextStyle(
+                  color: Colors.grey,
+                  shadows: [
+                    Shadow(
+                        color: Colors.black,
+                        blurRadius: 1,
+                        offset: Offset(0.3, 0.3))
+                  ],
+                  fontSize: 16))),
+    );
+  }
 }

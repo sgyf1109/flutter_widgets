@@ -40,7 +40,7 @@ class WidgetPo extends Equatable {
 
   @override
   String toString() {
-    return 'WidgetPo{id: $id, name: $name, nameCN: $nameCN, collected: $collected, family: $family, lever: $lever, image: $image, info: $info}';
+    return 'WidgetPo{id: $id, name: $name, nameCN: $nameCN, collected: $collected, family: $family, lever: $lever, image: $image, info: $info,linkWidget: $linkWidget}}';
   }
 
   @override

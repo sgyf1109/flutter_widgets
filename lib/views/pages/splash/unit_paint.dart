@@ -15,20 +15,19 @@ class UnitPainter extends CustomPainter {
   }
 
   @override
-  void paint(Canvas canvas, Size size) {
+  void paint(Canvas canvas, Size size) {//size指定了控件的大小，这里是contain定义的宽高360*640
 
-
+    print("绘制大小"+"===${size.width}"+"===${size.height}");
     canvas.translate(
-        size.width / 2 - width * 0.5, size.height / 2 - width * 0.5);
+        size.width / 2 - width * 0.5, size.height / 2 - width * 0.5);//绘制到屏幕中间
 
     canvas.save();
-    canvas.translate(
+    canvas.translate(//执行绘制到屏幕中间的平移动画
         -size.width / 2 * (1 - factor), -size.width / 2 * (1 - factor));
     drawColor1(canvas);
     canvas.restore();
 
     canvas.save();
-
     canvas.translate(
         size.width / 2 * (1 - factor), -size.width / 2 * (1 - factor));
     drawColor2(canvas);
@@ -48,7 +47,7 @@ class UnitPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
+  bool shouldRepaint(CustomPainter oldDelegate) {//shouldRepaint则决定当条件变化时是否需要重画。
     return true;
   }
 
@@ -58,7 +57,7 @@ class UnitPainter extends CustomPainter {
     _path1.lineTo(width * 0.5 - 1, width * 0.5 - 1);
     _path1.lineTo(0, width * (1 - 0.618) * factor - 1);
 
-    canvas.drawPath(_clipAngle(_path1), _paint..color = Colors.red);
+    canvas.drawPath(_clipAngle(_path1), _paint..color = Colors.pink);
   }
 
   void drawColor2(Canvas canvas) {
@@ -67,7 +66,7 @@ class UnitPainter extends CustomPainter {
     _path2.lineTo(width, width * 0.618 * factor);
     _path2.lineTo(width * 0.5, width * 0.5);
 
-    canvas.drawPath(_clipAngle(_path2), _paint..color = Colors.blue);
+    canvas.drawPath(_clipAngle(_path2), _paint..color = Colors.yellow);
   }
 
   void drawColor3(Canvas canvas) {
@@ -75,7 +74,7 @@ class UnitPainter extends CustomPainter {
     _path3.lineTo(width, width * 0.618 * factor + 1);
     _path3.lineTo(width, width);
     _path3.lineTo(width * (1 - 0.618) * factor + 1, width);
-    canvas.drawPath(_clipAngle(_path3), _paint..color = Colors.green);
+    canvas.drawPath(_clipAngle(_path3), _paint..color = Colors.lightBlueAccent);
   }
 
   void drawColor4(Canvas canvas) {
@@ -83,15 +82,15 @@ class UnitPainter extends CustomPainter {
     _path4.lineTo(width * 0.5, width * 0.5);
     _path4.lineTo(width * (1 - 0.618) * factor, width);
     _path4.lineTo(0, width);
-    canvas.drawPath(_clipAngle(_path4), _paint..color = Colors.yellow);
+    canvas.drawPath(_clipAngle(_path4), _paint..color = Colors.orange);
   }
 
   Path _clipAngle(Path path) {
-    return Path.combine(
-        PathOperation.difference,
+    return Path.combine(//将两个路径合成一个路径，自动处理路径分隔符的问题
+        PathOperation.difference,//两个路径的补集
         path,
         Path()
-          ..addOval(Rect.fromCircle(
+          ..addOval(Rect.fromCircle(//贝塞尔曲线直接画一个圆:
               center: Offset(width * 0.5, width * 0.5), radius: 25.0)));
   }
 }

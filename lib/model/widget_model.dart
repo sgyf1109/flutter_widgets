@@ -24,7 +24,7 @@ class WidgetModel extends Equatable {
   final WidgetFamily family;
   final bool collected;
   final WidgetType type;
-  final List<int> links;
+  final List<int> links;//关联的组件标号
   final double lever;
   final ImageProvider image;
   final String info;

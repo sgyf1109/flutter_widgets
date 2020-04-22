@@ -5,6 +5,13 @@ import 'package:flutterwidgets/blocs/global/global_event.dart';
 import 'package:flutterwidgets/blocs/global/global_state.dart';
 import 'package:flutterwidgets/storage/app_storeage.dart';
 
+import 'app/enums.dart';
+import 'app/router.dart';
+import 'blocs/collect/collect_bloc.dart';
+import 'blocs/collect/collect_event.dart';
+import 'blocs/detail/detail_bloc.dart';
+import 'blocs/widgets/home_bloc.dart';
+import 'blocs/widgets/home_event.dart';
 import 'repositorys/widget_db_repository.dart';
 import 'views/pages/splash/unit_splash.dart';
 void main() => runApp(BlocWrapper(child:FlutterApp()));
@@ -28,6 +35,14 @@ class BlocWrapper extends StatelessWidget{
       BlocProvider<GlobalBloc>(create: (BuildContext context){
         return GlobalBloc(storage)..add(EventInitApp());
       }),
+      BlocProvider<HomeBloc>(
+          create: (_) => HomeBloc(repository: repository)
+            ..add(EventTabTap(WidgetFamily.statelessWidget))),
+      BlocProvider<DetailBloc>(
+          create: (_) => DetailBloc(repository: repository)),
+      BlocProvider<CollectBloc>(
+          create: (_) =>
+          CollectBloc(repository: repository)..add(EventSetCollectData())),
     ], child: child);
   }
 }
@@ -40,6 +55,7 @@ class FlutterApp extends StatelessWidget{
       return MaterialApp(
         title: "Flutter Demo",
         debugShowCheckedModeBanner: false,
+        onGenerateRoute: Router.generateRoute,
         theme: ThemeData(primarySwatch: state.themeColor,fontFamily: state.fontFamily),//primarySwatch类型为MaterialColor,primaryColor类型为color
         home: UnitSplash(),
       );
