@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_star/flutter_star.dart';
+import 'package:flutterwidgets/app/res/cons.dart';
 import 'package:flutterwidgets/app/style/TolyIcon.dart';
 import 'package:flutterwidgets/app/utils/Toast.dart';
 import 'package:flutterwidgets/blocs/collect/collect_bloc.dart';
@@ -12,9 +13,13 @@ import 'package:flutterwidgets/blocs/collect/collect_state.dart';
 import 'package:flutterwidgets/blocs/detail/detail_bloc.dart';
 import 'package:flutterwidgets/blocs/detail/detail_event.dart';
 import 'package:flutterwidgets/blocs/detail/detail_state.dart';
+import 'package:flutterwidgets/blocs/global/global_bloc.dart';
 import 'package:flutterwidgets/compoents/permanent/feedback_widget.dart';
 import 'package:flutterwidgets/compoents/permanent/panel.dart';
+import 'package:flutterwidgets/compoents/project/widget_node_panel.dart';
+import 'package:flutterwidgets/model/node_model.dart';
 import 'package:flutterwidgets/model/widget_model.dart';
+import 'package:flutterwidgets/views/widgets/widgets_map.dart';
 
 class WidgetDetailPage extends StatefulWidget {
   @override
@@ -66,7 +71,9 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
                       )
                     ],
                   ),
-                  _buildLinkTo(context, state.links)
+                  _buildLinkTo(context, state.links),
+                  Divider(),
+                  _buildNodes(state.nodes, state.widgetModel.name)
                 ],
               ),
             ),
@@ -177,7 +184,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
                 label: Text("${e.name}"),
                 onPressed: () {
                   BlocProvider.of<DetailBloc>(context)
-                      .add(FetchWidgetDetail(e));//直接刷新当前页面
+                      .add(FetchWidgetDetail(e)); //直接刷新当前页面
                 },
                 elevation: 2,
                 shadowColor: Colors.orange,
@@ -189,5 +196,23 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
         ),
       );
     }
+  }
+
+  Widget _buildNodes(List<NodeModel> nodes, String name) {
+    var globalState = BlocProvider.of<GlobalBloc>(context).state;
+    return Column(
+      children: <Widget>[
+        ...nodes.asMap().keys.map((i) {
+          return WidgetNodePanel(
+              codeStyle: Cons.codeThemeSupport.keys
+                  .toList()[globalState.codeStyleIndex],
+              codeFamily: "Inconsolata",
+              text: nodes[i].name,
+              subText: nodes[i].subtitle,
+              code: nodes[i].code,
+              show: WidgetsMap.map(name)[i]);
+        })
+      ],
+    );
   }
 }
