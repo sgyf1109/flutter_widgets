@@ -25,7 +25,8 @@ class WidgetPo extends Equatable {
       this.image,
       this.info});
 
-  factory WidgetPo.fromJson(Map<String, dynamic> map) {
+  //自定义构造函数必须明确的进行声明。就是前面要有类名了
+  factory WidgetPo.fromJson(Map<String, dynamic> map) {//当你需要构造函数不是每次都创建一个新的对象时，使用factory关键字。
     return WidgetPo(
         id: map['id'],
         name: map['name'],

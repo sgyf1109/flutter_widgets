@@ -9,6 +9,7 @@ import 'package:flutterwidgets/blocs/widgets/home_bloc.dart';
 import 'package:flutterwidgets/blocs/widgets/home_event.dart';
 import 'package:flutterwidgets/blocs/widgets/home_state.dart';
 import 'package:flutterwidgets/model/widget_model.dart';
+import 'package:flutterwidgets/views/items/coupon_widget_list_item.dart';
 import 'package:flutterwidgets/views/items/techno_widget_list_item.dart';
 import 'package:flutterwidgets/views/pages/common/empty_page.dart';
 import 'package:flutterwidgets/views/pages/home/background.dart';
@@ -97,13 +98,27 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _mapItemByType(WidgetModel model) {
-//    var index = BlocProvider.of<GlobalBloc>(context).state.itemStyleIndex;//item样式
-//    switch(index){
-//      case 0:
-//        return TechnoWidgetListItem(
-//          data: model,
-//        );
-//    }
+    var index = BlocProvider.of<GlobalBloc>(context).state.itemStyleIndex;//item样式
+    switch(index){
+      case 0:
+        return TechnoWidgetListItem(
+          data: model,
+        );
+      case 1:
+        return CouponWidgetListItem(
+          data: model,
+        );
+      case 2:
+        return CouponWidgetListItem(
+          hasTopHole:false,
+          data: model,
+        );
+      case 3:
+        return CouponWidgetListItem(
+          hasTopHole:true,hasBottomHole:true,
+          data: model,
+        );
+    }
     return TechnoWidgetListItem(
       data: model,
     );

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_star/flutter_star.dart';
 import 'package:flutterwidgets/app/res/cons.dart';
-import 'package:flutterwidgets/app/style/techno_shape.dart';
+import 'package:flutterwidgets/app/style/shape/techno_shape.dart';
 import 'package:flutterwidgets/blocs/collect/collect_bloc.dart';
 import 'package:flutterwidgets/blocs/collect/collect_state.dart';
 import 'package:flutterwidgets/compoents/permanent/circle_image.dart';

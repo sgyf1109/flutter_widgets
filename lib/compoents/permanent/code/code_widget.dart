@@ -1,7 +1,6 @@
-
 /// create by 张风捷特烈 on 2020-04-15
 /// contact me by email 1981462002@qq.com
-/// 说明: 
+/// 说明:
 
 import 'package:flutter/material.dart';
 
@@ -9,7 +8,12 @@ import 'high_light_code.dart';
 import 'highlighter_style.dart';
 
 class CodeWidget extends StatelessWidget {
-  CodeWidget({Key key, @required this.code, this.style, this.fontSize = 13,this.fontFamily})
+  CodeWidget(
+      {Key key,
+      @required this.code,
+      this.style,
+      this.fontSize = 13,
+      this.fontFamily})
       : super(key: key);
 
   final String code;
@@ -26,9 +30,17 @@ class CodeWidget extends StatelessWidget {
       Widget _codeWidget;
       try {
         _codeWidget = RichText(
+          //RichText在段落中显示不同样式
           text: TextSpan(
-            style: TextStyle(fontSize: fontSize,fontFamily: fontFamily),
-            children: <TextSpan>[DartHighlighter(style).format(code)],
+            style: TextStyle(fontSize: fontSize, fontFamily: fontFamily),
+            children: <TextSpan>[
+              DartHighlighter(style).format(code)
+              //自定义spans
+//              TextSpan(
+//                  text: code,
+//                  style: TextStyle(fontWeight: FontWeight.bold,color: Colors.orange )
+//              ),
+            ], //生成很多样式
           ),
         );
       } catch (err) {

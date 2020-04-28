@@ -42,7 +42,7 @@ class WidgetDbRepository implements WidgetRepository {
   Future<List<WidgetModel>> searchWidgets(SearchArgs args) async {
     var data = await _widgetDao.search(args);
     var widgets = data.map((e) => WidgetPo.fromJson(e)).toList();
-    return widgets.map(WidgetModel.fromPo).toList();
+    return widgets.map(WidgetModel.fromPo).toList();//static可以不显示传参数
   }
 
   @override

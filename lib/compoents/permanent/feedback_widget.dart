@@ -16,7 +16,7 @@ class FeedbackWidget extends StatefulWidget {
   final Widget child;
   final FeedMode mode;
   final Duration duration;
-  final Function() onPressed;
+  final Function onPressed;
   final a;
 
   FeedbackWidget(
@@ -61,7 +61,7 @@ class _FeedBackState extends State<FeedbackWidget>
       onTap: () {
         _controller.forward();
         if(widget.onPressed!=null){
-          widget.onPressed();
+          widget.onPressed();//调用
         }
       },
       child: _buildByMode(widget.child, widget.mode),

@@ -10,6 +10,7 @@ import 'app/router.dart';
 import 'blocs/collect/collect_bloc.dart';
 import 'blocs/collect/collect_event.dart';
 import 'blocs/detail/detail_bloc.dart';
+import 'blocs/search/search_bloc.dart';
 import 'blocs/widgets/home_bloc.dart';
 import 'blocs/widgets/home_event.dart';
 import 'repositorys/widget_db_repository.dart';
@@ -43,6 +44,8 @@ class BlocWrapper extends StatelessWidget{
       BlocProvider<CollectBloc>(
           create: (_) =>
           CollectBloc(repository: repository)..add(EventSetCollectData())),
+      BlocProvider<SearchBloc>(
+          create: (_) => SearchBloc(repository: repository)),
     ], child: child);
   }
 }
@@ -56,6 +59,7 @@ class FlutterApp extends StatelessWidget{
         title: "Flutter Demo",
         debugShowCheckedModeBanner: false,
         onGenerateRoute: Router.generateRoute,
+        //primarySwatch备用主题颜色，如果没有设定primaryColor就使用该颜色,目前字体显示只对英文有效
         theme: ThemeData(primarySwatch: state.themeColor,fontFamily: state.fontFamily),//primarySwatch类型为MaterialColor,primaryColor类型为color
         home: UnitSplash(),
       );

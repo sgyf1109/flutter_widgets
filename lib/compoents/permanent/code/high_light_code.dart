@@ -21,7 +21,7 @@ abstract class Highlighter { // ignore: one_member_abstracts
 
 //暗黑模式下的高亮样式
 class DartHighlighter extends Highlighter {
-  DartHighlighter([this._style]) {
+  DartHighlighter([this._style]) {//"[]"包围的参数属于可选位置参数
     _spans = <_HighlightSpan>[];
     _style ??= HighlighterStyle.fromColors(HighlighterStyle.lightColor);
   }

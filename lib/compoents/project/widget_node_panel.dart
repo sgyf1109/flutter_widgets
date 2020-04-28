@@ -64,7 +64,7 @@ class _WidgetNodePanelState extends State<WidgetNodePanel>
                 onPressed: () async {
 //                  await Clipboard.setData(ClipboardData(text: widget.code));
 //                  Toast.toast(context, '复制成功!');
-                  Share.share(widget.code);
+                  Share.share(widget.code);//分享插件
                 },
                 child: Padding(
                   padding: const EdgeInsets.only(
@@ -79,7 +79,7 @@ class _WidgetNodePanelState extends State<WidgetNodePanel>
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 10.0),
-                child: ToggleRotate(
+                child: ToggleRotate(//ToggleRotate旋转切换组件
                   durationMs: 300,
                   child: Icon(
                     TolyIcon.icon_code,
@@ -101,11 +101,11 @@ class _WidgetNodePanelState extends State<WidgetNodePanel>
             height: 20,
           ),
           _buildCode(context),
-          Padding(
+          Padding(//展示的组件
             padding: const EdgeInsets.only(top: 10, bottom: 20),
             child: widget.show,
           ),
-          Container(
+          Container(//组件属性
             width: double.infinity,
             child: Panel(
                 child: Text(
@@ -119,20 +119,23 @@ class _WidgetNodePanelState extends State<WidgetNodePanel>
     );
   }
 
-  Widget _buildCode(BuildContext context) => AnimatedCrossFade(
-    firstCurve: Curves.easeInCirc,
-    secondCurve: Curves.easeInToLinear,
-    firstChild: Container(),
-    secondChild: Container(
-      width: MediaQuery.of(context).size.width,
-      child: CodeWidget(
-        fontFamily: widget.codeFamily,
-        code: widget.code,
-        style: widget.codeStyle??HighlighterStyle.fromColors(
-            HighlighterStyle.lightColor),
+  Widget _buildCode(BuildContext context){
+    print("显示数据"+"${_crossFadeState}");
+    return  AnimatedCrossFade(//一个widget，在两个孩子之间交叉淡入
+      firstCurve: Curves.easeInCirc,//动画曲线Curves
+      secondCurve: Curves.easeInToLinear,
+      firstChild: Container(),
+      secondChild: Container(
+        width: MediaQuery.of(context).size.width,
+        child: CodeWidget(
+          fontFamily: widget.codeFamily,
+          code: widget.code,
+          style: widget.codeStyle??HighlighterStyle.fromColors(
+              HighlighterStyle.lightColor),
+        ),
       ),
-    ),
-    duration: Duration(milliseconds: 500),
-    crossFadeState: _crossFadeState,
-  );
+      duration: Duration(milliseconds: 500),
+      crossFadeState: _crossFadeState,//为true是不显示代码
+    );
+  }
 }
