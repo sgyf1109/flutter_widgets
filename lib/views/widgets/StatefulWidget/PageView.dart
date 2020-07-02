@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-28
+/// create by 小官在江湖 on 2020-03-28
 /// contact me by email 1981462002@qq.com
 /// 说明: 
 
@@ -153,7 +153,7 @@ class _CtrlPageViewState extends State<CtrlPageView> {
   void initState() {
     super.initState();
     _controller=PageController(
-      viewportFraction: 0.8,
+      viewportFraction: 0.8,//中间显示整图, 前后露出部分图，目前是0.8个图
       initialPage: (data.length/2).round()
     );
 

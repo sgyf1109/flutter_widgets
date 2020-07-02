@@ -64,7 +64,7 @@ class _CustomDefaultTextStyleTransitionState
                   Shadow(
                       offset: Offset(1, 1), color: Colors.purple, blurRadius: 3)
                 ])).animate(_ctrl),
-            child: Text('张风捷特烈'),
+            child: Text('小官在江湖'),
           ),
         ));
   }

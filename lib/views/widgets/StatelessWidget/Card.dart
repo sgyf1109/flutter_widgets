@@ -11,6 +11,7 @@ class CustomCard extends StatelessWidget {
       elevation: 4,
       margin: EdgeInsets.all(10),
       child: Container(
+        color: Colors.orange,
         alignment: Alignment.topLeft,
         width: 200,
         height: 0.618*200,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-31
+/// create by 小官在江湖 on 2020-03-31
 /// contact me by email 1981462002@qq.com
 /// 说明:
 //    {
@@ -57,7 +57,7 @@ class SliverOpacityDemo extends StatelessWidget {
     return SliverAppBar(
       expandedHeight: 190.0,
       leading: _buildLeading(),
-      title: Text('张风捷特烈'),
+      title: Text('小官在江湖'),
       actions: _buildActions(),
       elevation: 5,
       pinned: true,

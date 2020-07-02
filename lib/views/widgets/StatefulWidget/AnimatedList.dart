@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-23
+/// create by 小官在江湖 on 2020-03-23
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
@@ -36,44 +36,6 @@ class _CustomAnimatedListState extends State<CustomAnimatedList> {
       removedItemBuilder: _buildRemovedItem,
     );
     _nextItem = 4;
-  }
-
-  Widget _buildItem(
-      BuildContext context, int index, Animation<double> animation) {
-    return CardItem(
-      animation: animation,
-      item: _list[index],
-      selected: _selectedItem == _list[index],
-      onTap: () {
-        setState(() {
-          _selectedItem = _selectedItem == _list[index] ? null : _list[index];
-        });
-      },
-    );
-  }
-
-  Widget _buildRemovedItem(
-      int item, BuildContext context, Animation<double> animation) {
-    return CardItem(
-      animation: animation,
-      item: item,
-      selected: false,
-    );
-  }
-
-  void _insert() {
-    final int index =
-        _selectedItem == null ? _list.length : _list.indexOf(_selectedItem);
-    _list.insert(index, _nextItem++);
-  }
-
-  void _remove() {
-    if (_selectedItem != null) {
-      _list.removeAt(_list.indexOf(_selectedItem));
-      setState(() {
-        _selectedItem = null;
-      });
-    }
   }
 
   @override
@@ -113,6 +75,45 @@ class _CustomAnimatedListState extends State<CustomAnimatedList> {
           ),
         ],
       );
+
+  Widget _buildItem(
+      BuildContext context, int index, Animation<double> animation) {
+    return CardItem(
+      animation: animation,
+      item: _list[index],
+      selected: _selectedItem == _list[index],
+      onTap: () {
+        setState(() {
+          _selectedItem = _selectedItem == _list[index] ? null : _list[index];
+        });
+      },
+    );
+  }
+
+  Widget _buildRemovedItem(
+      int item, BuildContext context, Animation<double> animation) {
+    return CardItem(
+      animation: animation,
+      item: item,
+      selected: false,
+    );
+  }
+
+
+  void _insert() {
+    final int index =
+    _selectedItem == null ? _list.length : _list.indexOf(_selectedItem);
+    _list.insert(index, _nextItem++);
+  }
+
+  void _remove() {
+    if (_selectedItem != null) {
+      _list.removeAt(_list.indexOf(_selectedItem));
+      setState(() {
+        _selectedItem = null;
+      });
+    }
+  }
 }
 
 class ListModel<E> {

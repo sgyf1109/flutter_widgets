@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-31
+/// create by 小官在江湖 on 2020-03-31
 /// contact me by email 1981462002@qq.com
 /// 说明: 
 //    {
@@ -52,7 +52,7 @@ class SliverPersistentHeaderDemo extends StatelessWidget {
         leading: Image.asset("assets/images/icon_head.png"),
         title: Text("以梦为马"),
         subtitle: Text("海子"),
-        selected: true,
+        selected: true,//如果选中列表的 item 项，那么文本和图标的颜色将成为主题的主颜色。
         contentPadding: EdgeInsets.all(5),
         trailing: Icon(Icons.more_vert),
       ),
@@ -97,7 +97,7 @@ class SliverPersistentHeaderDemo extends StatelessWidget {
     return SliverAppBar(
       expandedHeight: 190.0,
       leading: _buildLeading(),
-      title: Text('张风捷特烈'),
+      title: Text('小官在江湖'),
       actions: _buildActions(),
       elevation: 2,
       pinned: true,

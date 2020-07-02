@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-23
+/// create by 小官在江湖 on 2020-03-23
 /// contact me by email 1981462002@qq.com
 /// 说明:
 //    {
@@ -70,7 +70,7 @@ class _CustomAnimatedContainerState extends State<CustomAnimatedContainer> {
           color: Colors.grey.withAlpha(22),
           width: 200,
           height: 120,
-          child: UnconstrainedBox(
+          child: UnconstrainedBox(//“去除”父级限制
             child: AnimatedContainer(
               duration: Duration(seconds: 1),
               curve: Curves.fastOutSlowIn,

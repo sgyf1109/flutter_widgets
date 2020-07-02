@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterwidgets/views/dialogs/dialog_about.dart';
 
-/// create by 张风捷特烈 on 2020-03-26
+/// create by 小官在江湖 on 2020-03-26
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
@@ -27,7 +27,7 @@ class PressRawChip extends StatelessWidget {
       child: RawChip(
         padding: EdgeInsets.all(5),
         labelPadding: EdgeInsets.all(3),
-        label: Text('张风捷特烈'),
+        label: Text('小官在江湖'),
         avatar: Image.asset("assets/images/icon_head.png"),
         elevation: 3,
         pressElevation: 5,
@@ -66,7 +66,7 @@ class _SelectRawChipState extends State<SelectRawChip> {
         labelPadding: EdgeInsets.all(3),
         deleteIconColor: Colors.red,
         selectedColor: Colors.orangeAccent.withAlpha(44),
-        label: Text('张风捷特烈'),
+        label: Text('小官在江湖'),
         avatar: Image.asset("assets/images/icon_head.png"),
         elevation: 3,
         pressElevation: 5,

@@ -21,12 +21,10 @@ class CustomRadioListTile extends StatefulWidget {
 
 class _CustomRadioListTileState extends State<CustomRadioListTile> {
   final Map<ItemType, ItemBean> languages = {
-    ItemType.java:
-    ItemBean("Java", "曾经世界上最流行的语言", "assets/images/java.jpeg"),
+    ItemType.java: ItemBean("Java", "曾经世界上最流行的语言", "assets/images/java.jpeg"),
     ItemType.kotlin:
-    ItemBean("Kotlin", "未来世界上最流行的语言", "assets/images/kotlin.jpg"),
-    ItemType.dart:
-    ItemBean("Dart", "世界上最优雅的语言", "assets/images/dart.jpg"),
+        ItemBean("Kotlin", "未来世界上最流行的语言", "assets/images/kotlin.jpg"),
+    ItemType.dart: ItemBean("Dart", "世界上最优雅的语言", "assets/images/dart.jpg"),
   };
   var _type = ItemType.java;
 
@@ -38,11 +36,12 @@ class _CustomRadioListTileState extends State<CustomRadioListTile> {
           mainAxisSize: MainAxisSize.min,
           children: languages.keys
               .map((type) => RadioListTile<ItemType>(
+                    activeColor: Colors.red,
                     value: type,
                     groupValue: _type,
                     title: Text(languages[type].title),
                     subtitle: Text(languages[type].subTitle),
-                    selected: _type == type,
+                    selected: _type == type,//不影响选中圆圈,只对item其余部分生效
                     secondary: CircleAvatar(
                       backgroundImage: AssetImage(languages[type].imgUrl),
                     ),
@@ -60,12 +59,10 @@ class DenseRadioListTile extends StatefulWidget {
 
 class _DenseRadioListTileState extends State<DenseRadioListTile> {
   final Map<ItemType, ItemBean> languages = {
-    ItemType.java:
-    ItemBean("Java", "曾经世界上最流行的语言", "assets/images/java.jpeg"),
+    ItemType.java: ItemBean("Java", "曾经世界上最流行的语言", "assets/images/java.jpeg"),
     ItemType.kotlin:
-    ItemBean("Kotlin", "未来世界上最流行的语言", "assets/images/kotlin.jpg"),
-    ItemType.dart:
-    ItemBean("Dart", "世界上最优雅的语言", "assets/images/dart.jpg"),
+        ItemBean("Kotlin", "未来世界上最流行的语言", "assets/images/kotlin.jpg"),
+    ItemType.dart: ItemBean("Dart", "世界上最优雅的语言", "assets/images/dart.jpg"),
   };
   var _type = ItemType.java;
 
@@ -77,23 +74,22 @@ class _DenseRadioListTileState extends State<DenseRadioListTile> {
           mainAxisSize: MainAxisSize.min,
           children: languages.keys
               .map((type) => RadioListTile<ItemType>(
-            value: type,
-            groupValue: _type,
-            title: Text(languages[type].title),
-            activeColor: Colors.orangeAccent,
-            dense: true,
-            subtitle: Text(languages[type].subTitle),
-            selected: _type == type,
-            secondary: CircleAvatar(
-              backgroundImage: AssetImage(languages[type].imgUrl),
-            ),
-            onChanged: (type) => setState(() => _type = type),
-          ))
+                    value: type,
+                    groupValue: _type,
+                    title: Text(languages[type].title),
+                    activeColor: Colors.orangeAccent,
+                    dense: true,
+                    subtitle: Text(languages[type].subTitle),
+                    selected: _type == type,
+                    secondary: CircleAvatar(
+                      backgroundImage: AssetImage(languages[type].imgUrl),
+                    ),
+                    onChanged: (type) => setState(() => _type = type),
+                  ))
               .toList()),
     );
   }
 }
-
 
 //class RadioListTilePage extends StatefulWidget {
 //  @override

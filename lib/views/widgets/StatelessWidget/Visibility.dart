@@ -73,7 +73,7 @@ class ReplacementVisibility extends StatelessWidget {
           box,
           Visibility(
               visible: visible,
-              replacement: Container(
+              replacement: Container(//隐藏时站位
                 alignment: Alignment.center,
                 height: 80 * 0.618,
                 width: 80,

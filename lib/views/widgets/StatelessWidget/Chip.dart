@@ -9,7 +9,7 @@ class CustomChip extends StatelessWidget {
       children: <Widget>[
         Chip(
           avatar: Image.asset("assets/images/icon_head.png"),
-          label: Text("张风捷特烈"),
+          label: Text("小官在江湖"),
           padding: EdgeInsets.all(5),
           labelPadding: EdgeInsets.all(5),
         ),
@@ -34,7 +34,7 @@ class ColorOfChip extends StatelessWidget {
       children: <Widget>[
         Chip(
           avatar: Image.asset("assets/images/icon_head.png"),
-          label: Text("张风捷特烈"),
+          label: Text("小官在江湖"),
           padding: EdgeInsets.all(5),
           labelPadding: EdgeInsets.all(5),
           backgroundColor: Colors.grey.withAlpha(66),
@@ -43,7 +43,7 @@ class ColorOfChip extends StatelessWidget {
         ),
         Chip(
           avatar: Image.asset("assets/images/icon_head.png"),
-          label: Text("张风捷特烈"),
+          label: Text("小官在江湖"),
           padding: EdgeInsets.all(5),
           labelPadding: EdgeInsets.all(5),
           backgroundColor: Colors.cyanAccent.withAlpha(11),
@@ -60,7 +60,7 @@ class DeleteOfChip extends StatelessWidget {
   Widget build(BuildContext context) {
     return Chip(
       avatar: Image.asset("assets/images/icon_head.png"),
-      label: Text("张风捷特烈"),
+      label: Text("小官在江湖"),
       padding: EdgeInsets.all(5),
       labelPadding: EdgeInsets.all(3),
       backgroundColor: Colors.grey.withAlpha(66),

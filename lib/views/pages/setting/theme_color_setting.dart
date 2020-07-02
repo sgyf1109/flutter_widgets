@@ -100,6 +100,6 @@ class ThemeColorSettingPage extends StatelessWidget {
 
   String colorString(Color color) {
     print("颜色" + "${color.value}");
-    return "#${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}"; //toRadixString整型转换为16进制,padLeft在字符串前后补占位符
+    return "#${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}"; //toRadixString整型转换为16进制,padLeft在字符串左侧补占位符
   }
 }

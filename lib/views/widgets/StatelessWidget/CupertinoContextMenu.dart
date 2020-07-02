@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-25
+/// create by 小官在江湖 on 2020-03-25
 /// contact me by email 1981462002@qq.com
 /// 说明:
 //    {
@@ -24,11 +24,11 @@ class CustomCupertinoContextMenu extends StatelessWidget {
   final info= ['保存图片','立刻呼叫','添加到收藏夹'];
 
   Widget _buildCupertinoContextMenu(context) => Container(
-    decoration: BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage('assets/images/sabar_bar.jpg'),
-            fit: BoxFit.cover),
-        borderRadius: BorderRadius.all(Radius.circular(50))),
+//    decoration: BoxDecoration(
+//        image: DecorationImage(
+//            image: AssetImage('assets/images/drawer_head.jpg'),
+//            fit: BoxFit.cover),
+//        borderRadius: BorderRadius.all(Radius.circular(20))),
     width: 100,
     height: 100,
     child: CupertinoContextMenu(

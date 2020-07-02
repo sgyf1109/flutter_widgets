@@ -99,7 +99,8 @@ class _SearchPageState extends State<SearchPage> {
             color: index ? Colors.blue : Colors.grey,
             size: 18,
           ),
-          onChange: _doSelectStart, //引用方法后面不能带括号
+          //引用方法后面不能带括号
+          onChange: _doSelectStart,
         ),
         Divider()
       ],

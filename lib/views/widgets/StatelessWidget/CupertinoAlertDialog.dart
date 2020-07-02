@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-24
+/// create by 小官在江湖 on 2020-03-24
 /// contact me by email 1981462002@qq.com
 /// 说明:
 ///
@@ -55,6 +55,7 @@ class CustomCupertinoAlertDialog extends StatelessWidget {
               child: Text("Cancle"),
               onPressed: () => Navigator.pop(context),
             ),
+
           ]),
     );
   }
@@ -88,7 +89,7 @@ class CustomCupertinoAlertDialog extends StatelessWidget {
             '    Hi toly! If you push the conform buttom ,'
             ' You will lose this file. Are you sure wand to do that?',
             style: TextStyle(color: Color(0xff999999), fontSize: 16),
-            textAlign: TextAlign.justify,
+            textAlign: TextAlign.justify,//两端贴边对齐)
           ),
         ],
       ),

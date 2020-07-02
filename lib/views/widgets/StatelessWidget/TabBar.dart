@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterwidgets/compoents/flutter/no_shadow_tab_bar.dart';
 
-/// create by 张风捷特烈 on 2020-03-16
+/// create by 小官在江湖 on 2020-03-16
 /// contact me by email 1981462002@qq.com
 /// 说明:
 

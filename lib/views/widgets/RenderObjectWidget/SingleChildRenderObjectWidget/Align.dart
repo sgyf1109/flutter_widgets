@@ -119,8 +119,11 @@ class _SinLayoutState extends State<SinLayout> {
         min: -180,
         divisions: 360,
         label: "${_x.toStringAsFixed(2)}π",
-        value: _x * 180,
-        onChanged: (v) => setState(() => _x = v / 180));
+        value: _x * 180,//value范围必须在max和min之间
+        onChanged: (v) => setState((){
+          print("数值"+"${_x}");
+         return _x = v / 180;
+        }));
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[slider, item],

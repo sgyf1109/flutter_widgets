@@ -60,8 +60,8 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       currentIndex: _position,
       elevation: 1,
       type: _type,
-      fixedColor: isShifting ? Colors.white : _colors[_position],
-      backgroundColor: Colors.white,
+      fixedColor: isShifting ? Colors.white : Colors.pink,
+      backgroundColor: Colors.indigoAccent,
       iconSize: 25,
       selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
       showUnselectedLabels: false,
@@ -86,11 +86,14 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
         ),
         Switch(
-            value: _type == BottomNavigationBarType.shifting,
+            value:isShifting,
             onChanged: (b) {
-              setState(() => _type = b
-                  ? BottomNavigationBarType.shifting
-                  : BottomNavigationBarType.fixed);
+              setState((){
+                print("状态"+"${b}+-------${_type}");
+                return _type = b
+                    ? BottomNavigationBarType.shifting//（代表tab是浮动的）
+                    : BottomNavigationBarType.fixed;
+              });
             }),
       ],
     );

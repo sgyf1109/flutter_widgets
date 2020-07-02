@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-23
+/// create by 小官在江湖 on 2020-03-23
 /// contact me by email 1981462002@qq.com
 /// 说明:
 //    {
@@ -61,7 +61,7 @@ class _CustomAnimatedDefaultTextStyleState
             style: _style,
             onEnd: () => print('End'),
             child: Text(
-              '张风捷特烈',
+              '小官在江湖',
               style: TextStyle(color: Colors.white),
             ),
           ),

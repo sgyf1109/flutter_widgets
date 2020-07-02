@@ -9,7 +9,7 @@ class CustomUAGHP extends StatelessWidget {
         accountName: Container(
           padding: const EdgeInsets.all(8.0),
           child: Text(
-            "张风捷特烈",
+            "小官在江湖",
             style:
                 TextStyle(color: Colors.orangeAccent, fontSize: 22, shadows: [
               Shadow(
@@ -51,7 +51,7 @@ class ProUAGHP extends StatelessWidget {
         accountName: Container(
           padding: const EdgeInsets.all(8.0),
           child: Text(
-            "张风捷特烈",
+            "小官在江湖",
             style:
                 TextStyle(color: Colors.orangeAccent, fontSize: 22,
                     shadows: [

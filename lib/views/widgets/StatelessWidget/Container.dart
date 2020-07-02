@@ -69,8 +69,8 @@ class ContainerDecoration extends StatelessWidget {
             BoxShadow(
                 color: Colors.grey,
                 offset: Offset(1, 1),
-                blurRadius: 10,
-                spreadRadius: 1),
+                blurRadius: 10,//高斯的标准偏差与盒子的形状卷积。
+                spreadRadius: 1),//在应用模糊之前，框应该膨胀的量
           ]),
       child: Text(
         "Container",

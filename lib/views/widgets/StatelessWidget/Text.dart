@@ -14,7 +14,7 @@ class CustomText extends StatelessWidget {
       width: 200,
       color: Colors.cyanAccent.withAlpha(33),
       height: 200 * 0.618 * 0.618,
-      child: Text("toly-张风捷特烈-1994`", style: style),
+      child: Text("toly-小官在江湖-1994`", style: style),
     );
   }
 }
@@ -28,8 +28,8 @@ class DecorationText extends StatelessWidget {
           fontSize: 50,
           fontWeight: FontWeight.bold,
           decoration: TextDecoration.underline,
-          decorationThickness: 3,
-          decorationStyle: TextDecorationStyle.wavy,
+          decorationThickness: 3,//装饰线粗细
+          decorationStyle: TextDecorationStyle.wavy,//装饰线样式
           decorationColor: Colors.blue,
           fontStyle: FontStyle.italic,
           fontFamily: "DancingScript",
@@ -42,7 +42,7 @@ class ShadowText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      "张风捷特烈",
+      "小官在江湖",
       style: TextStyle(
           fontSize: 50,
           color: Colors.white,
@@ -73,7 +73,7 @@ class TextAlignText extends StatelessWidget {
                 color: Colors.cyanAccent.withAlpha(33),
                 height: 120 * 0.618,
                 child: Text(
-                  " 张风捷特烈 toly " * 3,
+                  " 小官在江湖 toly " * 3,
                   textAlign: e,
                 ),
               ))
@@ -94,7 +94,7 @@ class TextDirectionText extends StatelessWidget {
                 color: Colors.cyanAccent.withAlpha(33),
                 height: 120 * 0.618,
                 child: Text(
-                  " 张风捷特烈 toly " * 10,
+                  " 小官在江湖 toly " * 10,
                   textDirection: e,
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
@@ -116,7 +116,7 @@ class SoftWrapText extends StatelessWidget {
                 width: 150,
                 color: Colors.cyanAccent.withAlpha(33),
                 height: 150 * 0.618 * 0.618,
-                child: Text(" 张风捷特烈 toly " * 5,
+                child: Text(" 小官在江湖 toly " * 5,
                     overflow: e,
                     softWrap: false),
               ))

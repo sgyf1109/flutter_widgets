@@ -25,8 +25,8 @@ class DivisionsGridPage extends StatelessWidget {
         child: GridPaper(
             color: Colors.red,
             interval: 50,
-            divisions: 4,
-            subdivisions: 4,
+            divisions: 4,//子块中小块的数目
+            subdivisions: 2,//子块的分割数目
             child: Image.asset(
               "assets/images/wy_300x200.jpg",
               fit: BoxFit.cover,

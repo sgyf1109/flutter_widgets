@@ -12,7 +12,7 @@ class _CustomFilterChipState extends State<CustomFilterChip> {
     'C': 'Cat',
     'D': 'Dog',
   };
-  List<String> _selected = <String>[];
+  List<String> _selected = <String>[]; // 可改变长度的列表，可以根据需要改变长度
 
   @override
   Widget build(BuildContext context) {

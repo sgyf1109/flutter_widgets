@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-29
+/// create by 小官在江湖 on 2020-03-29
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
@@ -18,8 +18,8 @@ class CustomHero extends StatelessWidget {
     var hero = Hero(
       //----定义一个Hero,并添加tag标签,此中组件共享
       tag: 'user-head',
-      child: ClipRRect(
-        borderRadius: BorderRadius.all(Radius.circular(30)),
+      child: ClipRRect(// 圆角矩形裁剪
+        borderRadius: BorderRadius.all(Radius.circular(30)),////圆角半径
         child: Image.asset(
           "assets/images/icon_head.png",
           width: 60,

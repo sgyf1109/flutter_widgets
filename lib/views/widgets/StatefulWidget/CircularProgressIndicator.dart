@@ -31,6 +31,8 @@ class _CustomCircularProgressIndicatorState
         child: CircularProgressIndicator(
           value: e,
           backgroundColor: Colors.grey.withAlpha(33),
+          //想对进度条应用一种固定的颜色，此时可以通过AlwaysStoppedAnimation来指定。
+          // 变化的可以用ColorTween(begin: Colors.grey, end: Colors.blue).animate(_animationController),
           valueColor: AlwaysStoppedAnimation(Colors.orange),
           strokeWidth: 5,
         ),

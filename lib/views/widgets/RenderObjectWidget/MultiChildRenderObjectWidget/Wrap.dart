@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 //    {
 //      "widgetId": 98,
 //      "name": 'Wrap的基础用法',
@@ -15,16 +16,17 @@ class DirectionWrap extends StatelessWidget {
     return Wrap(
         children: Axis.values
             .map((mode) => Column(children: <Widget>[
-          Container(
-              margin: EdgeInsets.all(5),
-              width: 160,
-              height: 100,
-              color: Colors.grey.withAlpha(33),
-              child: _buildItem(mode)),
-          Text(mode.toString().split('.')[1])
-        ]))
+                  Container(
+                      margin: EdgeInsets.all(5),
+                      width: 160,
+                      height: 100,
+                      color: Colors.grey.withAlpha(33),
+                      child: _buildItem(mode)),
+                  Text(mode.toString().split('.')[1])
+                ]))
             .toList());
   }
+
   final yellowBox = Container(
     color: Colors.yellow,
     height: 30,
@@ -63,15 +65,21 @@ class DirectionWrap extends StatelessWidget {
   );
 
   _buildItem(mode) => Wrap(
-    direction: mode,
-    runSpacing: 10,
-    spacing: 10,
-    children: <Widget>[
-      yellowBox, redBox, greenBox, cyanBox,
-      blackBox, purpleBox, orangeBox,
-    ],
-  );
+        direction: mode,
+        runSpacing: 10,
+        spacing: 10,
+        children: <Widget>[
+          yellowBox,
+          redBox,
+          greenBox,
+          cyanBox,
+          blackBox,
+          purpleBox,
+          orangeBox,
+        ],
+      );
 }
+
 //    {
 //      "widgetId": 98,
 //      "name": 'Wrap的alignment属性',
@@ -85,14 +93,14 @@ class WrapAlignmentWrap extends StatelessWidget {
     return Wrap(
         children: WrapAlignment.values
             .map((mode) => Column(children: <Widget>[
-          Container(
-              margin: EdgeInsets.all(5),
-              width: 160,
-              height: 100,
-              color: Colors.grey.withAlpha(88),
-              child: _buildItem(mode)),
-          Text(mode.toString().split('.')[1])
-        ]))
+                  Container(
+                      margin: EdgeInsets.all(5),
+                      width: 160,
+                      height: 100,
+                      color: Colors.grey.withAlpha(88),
+                      child: _buildItem(mode)),
+                  Text(mode.toString().split('.')[1])
+                ]))
             .toList());
   }
 
@@ -138,13 +146,17 @@ class WrapAlignmentWrap extends StatelessWidget {
         runSpacing: 10,
         spacing: 10,
         children: <Widget>[
-          yellowBox, redBox,
-          greenBox, cyanBox,
-          blackBox, purpleBox,
+          yellowBox,
+          redBox,
+          greenBox,
+          cyanBox,
+          blackBox,
+          purpleBox,
           orangeBox,
         ],
-    );
+      );
 }
+
 //    {
 //      "widgetId": 98,
 //      "name": 'Wrap的crossAxisAlignment属性',
@@ -158,14 +170,14 @@ class CrossAxisAlignmentWrap extends StatelessWidget {
     return Wrap(
         children: WrapCrossAlignment.values
             .map((mode) => Column(children: <Widget>[
-          Container(
-              margin: EdgeInsets.all(5),
-              width: 160,
-              height: 100,
-              color: Colors.grey.withAlpha(88),
-              child: _buildItem(mode)),
-          Text(mode.toString().split('.')[1])
-        ]))
+                  Container(
+                      margin: EdgeInsets.all(5),
+                      width: 160,
+                      height: 100,
+                      color: Colors.grey.withAlpha(88),
+                      child: _buildItem(mode)),
+                  Text(mode.toString().split('.')[1])
+                ]))
             .toList());
   }
 
@@ -207,16 +219,19 @@ class CrossAxisAlignmentWrap extends StatelessWidget {
   );
 
   _buildItem(mode) => Wrap(
-    crossAxisAlignment: mode,
-    runSpacing: 10,
-    spacing: 10,
-    children: <Widget>[
-      yellowBox, redBox,
-      greenBox, cyanBox,
-      blackBox, purpleBox,
-      orangeBox,
-    ],
-  );
+        crossAxisAlignment: mode,
+        runSpacing: 10,
+        spacing: 10,
+        children: <Widget>[
+          yellowBox,
+          redBox,
+          greenBox,
+          cyanBox,
+          blackBox,
+          purpleBox,
+          orangeBox,
+        ],
+      );
 }
 
 //    {
@@ -232,14 +247,14 @@ class TextDirectionWrap extends StatelessWidget {
     return Wrap(
         children: TextDirection.values
             .map((mode) => Column(children: <Widget>[
-          Container(
-              margin: EdgeInsets.all(5),
-              width: 160,
-              height: 100,
-              color: Colors.grey.withAlpha(88),
-              child: _buildItem(mode)),
-          Text(mode.toString().split('.')[1])
-        ]))
+                  Container(
+                      margin: EdgeInsets.all(5),
+                      width: 160,
+                      height: 100,
+                      color: Colors.grey.withAlpha(88),
+                      child: _buildItem(mode)),
+                  Text(mode.toString().split('.')[1])
+                ]))
             .toList());
   }
 
@@ -281,14 +296,19 @@ class TextDirectionWrap extends StatelessWidget {
   );
 
   _buildItem(mode) => Wrap(
-    textDirection: mode,
-    runSpacing: 10,
-    spacing: 10,
-    children: <Widget>[
-      yellowBox, redBox, greenBox, cyanBox,
-      blackBox, purpleBox, orangeBox,
-    ],
-  );
+        textDirection: mode,
+        runSpacing: 10,
+        spacing: 10,
+        children: <Widget>[
+          yellowBox,
+          redBox,
+          greenBox,
+          cyanBox,
+          blackBox,
+          purpleBox,
+          orangeBox,
+        ],
+      );
 }
 
 //    {
@@ -304,14 +324,14 @@ class VerticalDirectionWrap extends StatelessWidget {
     return Wrap(
         children: VerticalDirection.values
             .map((mode) => Column(children: <Widget>[
-          Container(
-              margin: EdgeInsets.all(5),
-              width: 160,
-              height: 100,
-              color: Colors.grey.withAlpha(88),
-              child: _buildItem(mode)),
-          Text(mode.toString().split('.')[1])
-        ]))
+                  Container(
+                      margin: EdgeInsets.all(5),
+                      width: 160,
+                      height: 100,
+                      color: Colors.grey.withAlpha(88),
+                      child: _buildItem(mode)),
+                  Text(mode.toString().split('.')[1])
+                ]))
             .toList());
   }
 
@@ -353,13 +373,18 @@ class VerticalDirectionWrap extends StatelessWidget {
   );
 
   _buildItem(mode) => Wrap(
-    verticalDirection: mode,
-    direction: Axis.vertical,
-    runSpacing: 10,
-    spacing: 10,
-    children: <Widget>[
-      yellowBox, redBox, greenBox, cyanBox,
-      blackBox, purpleBox, orangeBox,
-    ],
-  );
+        verticalDirection: mode,
+        direction: Axis.vertical,
+        runSpacing: 10,
+        spacing: 10,
+        children: <Widget>[
+          yellowBox,
+          redBox,
+          greenBox,
+          cyanBox,
+          blackBox,
+          purpleBox,
+          orangeBox,
+        ],
+      );
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-22
+/// create by 小官在江湖 on 2020-03-22
 /// contact me by email 1981462002@qq.com
 /// 说明:
 ///
@@ -120,13 +120,16 @@ class _DraggablePageState extends State<DraggablePage> {
 
   Widget _buildDragTarget() {
     return DragTarget<Color>(
+      //当Draggable从DragTarget上方离开时会调用该方法。
         onLeave: (data) => print("onLeave: data = $data "),
+        //当Draggable被滑动到DragTarget上方后松手，且onWillAccept函数返回true时会被调用，可以在此处处理Widget的状态变化；
         onAccept: (data) {
           print("onAccept: data = $data ");
           setState(() {
             _color = data;
           });
         },
+        //当Draggable被滑动到DragTarget上方时会调用,data为Draggable携带的数据源，根据条件判断是否需要接受此数据，如果要接收，则返回true；
         onWillAccept: (data) {
           print("onWillAccept: data = $data ");
           return data != null;

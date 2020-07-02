@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-29
+/// create by 小官在江湖 on 2020-03-29
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
@@ -70,7 +70,7 @@ class _CustomDismissibleState extends State<CustomDismissible> {
         data.remove(color);
       },
       confirmDismiss: (e) async {
-        if (e == DismissDirection.endToStart) {
+        if (e == DismissDirection.endToStart) {//从右往左为删除
           return true;
         } else {
           return false;

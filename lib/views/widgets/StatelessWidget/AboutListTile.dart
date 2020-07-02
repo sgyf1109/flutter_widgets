@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-31
+/// create by 小官在江湖 on 2020-03-31
 /// contact me by email 1981462002@qq.com
 /// 说明:
 //    {
@@ -19,16 +19,17 @@ class AboutListTileDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AboutListTile(
+      child: Text("应用信息"),
       icon: Icon(Icons.info),
       applicationIcon: FlutterLogo(),
       applicationName: 'Flutter Unit',
       applicationVersion: 'v0.0.1',
-      applicationLegalese: 'Copyright© 2018-2020 张风捷特烈',
+      applicationLegalese: 'Copyright© 2018-2020 小官在江湖',
       aboutBoxChildren: [
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: Text(
-            '      FlutterUnit是【张风捷特烈】的开源项目，'
+            '      FlutterUnit是【小官在江湖】的开源项目，'
             '收录Flutter的200+组件，并附加详细介绍以及操作交互，'
             '希望帮助广大编程爱好者入门Flutter。'
             '更多知识可以关注掘金账号、公众号【编程之王】。',

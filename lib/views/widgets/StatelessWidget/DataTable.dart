@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-21
+/// create by 小官在江湖 on 2020-03-21
 /// contact me by email 1981462002@qq.com
 /// 说明:
 //    {
@@ -87,7 +87,7 @@ class _SortDataTableState extends State<SortDataTable> {
   Widget build(BuildContext context) {
     return DataTable(
         columnSpacing: 20,
-        sortColumnIndex: 1,
+        sortColumnIndex: 1,//没有这个属性只能执行一次onsort,且必须onsort执行方法必须对应下标
         sortAscending: _sortAscending,
         columns: [
           DataColumn(
@@ -140,8 +140,8 @@ class _SortDataTableState extends State<SortDataTable> {
   _onSelectAll(bool select) {
     setState(() {
       if (select) {
-        data.forEach((e) => e.select = true);
-        selectData = data.map((e) => e).toList();
+        data.forEach((e) => e.select = true);//控制每个子控件是否选中
+        selectData = data.map((e) => e).toList();//控制最上面是否全选
       } else {
         data.forEach((e) => e.select = false);
         selectData = [];

@@ -64,7 +64,7 @@ class _CustomUnConstrainedBoxState extends State<CustomUnConstrainedBox> {
           height: 100,
           child: UnconstrainedBox(
               alignment: Alignment.center,
-              constrainedAxis: Axis.vertical,
+              constrainedAxis: Axis.vertical,//仍受约束的轴
               child: Container(
                 color: Colors.cyanAccent,
                 width: 60,

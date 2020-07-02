@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-04-01
+/// create by 小官在江湖 on 2020-04-01
 /// contact me by email 1981462002@qq.com
 /// 说明:
 //    {
@@ -28,14 +28,14 @@ class _StepperDemoState extends State<StepperDemo> {
     "注册完成":'恭喜您，注册完成！',
   };
 
-  final steps = [
-    Step(
-      title: Text("填写表单"),
-      content: Container(height: 60, child: Text("请按表单填写个人信息")),
-    ),
-    Step(title: Text("邮箱校验"), content: Text("请对您的账号进行邮箱校验")),
-    Step(title: Text("注册完成"), content: Text("恭喜您，注册完成")),
-  ];
+//  final steps = [
+//    Step(
+//      title: Text("填写表单"),
+//      content: Container(height: 60, child: Text("请按表单填写个人信息")),
+//    ),
+//    Step(title: Text("邮箱校验"), content: Text("请对您的账号进行邮箱校验")),
+//    Step(title: Text("注册完成"), content: Text("恭喜您，注册完成")),
+//  ];
 
   @override
   Widget build(BuildContext context) {
@@ -49,14 +49,14 @@ class _StepperDemoState extends State<StepperDemo> {
               _position = index;
             });
           },
-          onStepContinue: () {
+          onStepContinue: () {//下边打钩按钮
             setState(() {
               if (_position < 2) {
                 _position++;
               }
             });
           },
-          onStepCancel: () {
+          onStepCancel: () {//下边取消按钮
             if (_position > 0) {
               setState(() {
                 _position--;

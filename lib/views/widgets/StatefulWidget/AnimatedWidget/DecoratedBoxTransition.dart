@@ -47,7 +47,7 @@ class _CustomDecoratedBoxTransitionState
           width: 200,
           height: 100,
           child: DecoratedBoxTransition(
-            position: DecorationPosition.background,
+//            position: DecorationPosition.background,
             decoration: DecorationTween(
                 begin: BoxDecoration(
                     color: Colors.greenAccent,

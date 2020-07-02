@@ -45,7 +45,7 @@ class _CustomRefreshIndicatorState extends State<CustomRefreshIndicator> {
   Future<void> _increment() async {
     await Future.delayed(Duration(seconds: 2));
     setState(() {
-      _count++;
+      ++_count;
     });
   }
 }

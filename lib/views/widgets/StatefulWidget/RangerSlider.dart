@@ -31,7 +31,7 @@ class _CustomRangeSliderState extends State<CustomRangeSlider> {
         min: 0.0,
         max: 360.0,
         labels: RangeLabels("${_rangeValues.start.toStringAsFixed(1)}",
-            "${_rangeValues.end.toStringAsFixed(1)}"),
+            "${_rangeValues.end.toStringAsFixed(1)}"),//// 检查是否四舍五入，保留一位小数
         activeColor: Colors.orangeAccent,
         inactiveColor: Colors.green.withAlpha(99),
         onChangeStart: (value) {

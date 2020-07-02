@@ -125,6 +125,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _toDetailPage(WidgetModel model) {
+    print("当前模型"+"${model.nameCN}");
     BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(model));//main中定义好的DetailBloc
     Navigator.pushNamed(context, Router.widget_detail);
   }

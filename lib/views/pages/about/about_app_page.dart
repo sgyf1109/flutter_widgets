@@ -128,7 +128,7 @@ class AboutAppPage extends StatelessWidget {
              title: '项目简介',
              info:          '      Flutter Unit 是一个非盈利性的开源项目，'
                  '旨在提供全面的Flutter学习指南及编程者的交流技术的接口。'
-                 '由【张风捷特烈】提供技术支持和全权维护。唯一开源网站网址: '
+                 '由【小官在江湖】提供技术支持和全权维护。唯一开源网站网址: '
                  'https://github.com/toly1994328/FlutterUnit',
            ),
            Divider(

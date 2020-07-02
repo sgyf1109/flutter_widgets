@@ -1,4 +1,4 @@
-/// create by 张风捷特烈 on 2020-03-31
+/// create by 小官在江湖 on 2020-03-31
 /// contact me by email 1981462002@qq.com
 /// 说明: 
 
@@ -55,7 +55,7 @@ class FlexibleSpaceBarDemo extends StatelessWidget {
       backgroundColor: Colors.blue,
       flexibleSpace: FlexibleSpaceBar(//伸展处布局
         centerTitle: false,
-        title: Text('张风捷特烈',style: TextStyle(shadows: [
+        title: Text('小官在江湖',style: TextStyle(shadows: [
           Shadow(color: Colors.blue, offset: Offset(1, 1), blurRadius: 2)
         ]),),
         titlePadding: EdgeInsets.only(left: 55, bottom: 15), //标题边距

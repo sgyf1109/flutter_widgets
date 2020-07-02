@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-28
+/// create by 小官在江湖 on 2020-03-28
 /// contact me by email 1981462002@qq.com
 /// 说明: 
 
@@ -80,10 +80,10 @@ class BezierPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     canvas.clipRect(Offset.zero & size);
-    canvas.translate(size.width / 2, size.height / 2);
+    canvas.translate(size.width / 2, size.height / 2);//画布中心店移动中间
     _drawGrid(canvas, size); //绘制格线
     _drawAxis(canvas, size); //绘制轴线
-
+//
       _mainPath.moveTo(pos[0].dx, pos[0].dy);
       _mainPath.cubicTo(pos[1].dx, pos[1].dy, pos[2].dx, pos[2].dy, pos[3].dx, pos[3].dy);
       canvas.drawPath(_mainPath, _mainPaint);
@@ -98,15 +98,15 @@ class BezierPainter extends CustomPainter {
   void _drawGrid(Canvas canvas, Size size) {
     _gridPaint
       ..color = Colors.grey
-      ..strokeWidth = 0.5;
+      ..strokeWidth = 1;
     _gridPath = _buildGridPath(_gridPath, size);
-    canvas.drawPath(_buildGridPath(_gridPath, size), _gridPaint);
+    canvas.drawPath(_gridPath, _gridPaint);
 
     canvas.save();
     canvas.scale(1, -1); //沿x轴镜像
     canvas.drawPath(_gridPath, _gridPaint);
     canvas.restore();
-
+//
     canvas.save();
     canvas.scale(-1, 1); //沿y轴镜像
     canvas.drawPath(_gridPath, _gridPaint);
@@ -122,8 +122,8 @@ class BezierPainter extends CustomPainter {
     canvas.drawPoints(
         PointMode.lines,
         [
-          Offset(-size.width / 2, 0),
-          Offset(size.width / 2, 0),
+          Offset(-size.width / 2,0),
+          Offset(size.width / 2,0),
           Offset(0, -size.height / 2),
           Offset(0, size.height / 2),
           Offset(0, size.height / 2),
@@ -141,11 +141,11 @@ class BezierPainter extends CustomPainter {
   }
 
   Path _buildGridPath(Path path, Size size, {step = 20.0}) {
-    for (int i = 0; i < size.height / 2 / step; i++) {
+    for (int i = 0; i < size.height / 2 / step; i++) {//右下角横线
       path.moveTo(0, step * i);
-      path.relativeLineTo(size.width / 2, 0);
+      path.relativeLineTo(size.width / 2, 0);//参数是相对当前位置的相对坐标 ；
     }
-    for (int i = 0; i < size.width / 2 / step; i++) {
+    for (int i = 0; i < size.width / 2 / step; i++) {//右下角竖线
       path.moveTo(step * i, 0);
       path.relativeLineTo(
         0,

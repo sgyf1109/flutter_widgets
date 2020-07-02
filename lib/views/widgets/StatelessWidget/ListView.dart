@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-27
+/// create by 小官在江湖 on 2020-03-27
 /// contact me by email 1981462002@qq.com
 /// 说明:
 //    {
@@ -84,8 +84,8 @@ class HorizontalListView extends StatelessWidget {
     return Container(
       height: 200,
       child: ListView(
-        reverse: true,
-        shrinkWrap: true,
+        reverse: true,//调到列表顺序
+        shrinkWrap: true,//该属性将决定列表的长度是否仅包裹其内容的长度。当ListView嵌在一个无限长的容器组件中时，shrinkWrap必须为true，否则Flutter会给出警告；
         scrollDirection: Axis.horizontal,
         children: data
             .map((color) => Container(
@@ -188,7 +188,7 @@ class SeparatedListView extends StatelessWidget {
       height: 200,
       child: ListView.separated(
         separatorBuilder: (context, index) => Divider(
-          thickness: 1,
+          thickness: 10,//装饰线粗细
           height: 1,
           color: Colors.orange,
         ),

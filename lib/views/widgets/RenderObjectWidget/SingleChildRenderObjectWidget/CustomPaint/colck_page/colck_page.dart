@@ -48,7 +48,7 @@ class ClockPainter extends CustomPainter {
       for (int j = 0; j < digit[num][j].length; j++) {
         if (digit[num][i][j] == 1) {
           canvas.save();
-          double rX = j * 2 * (_radius + 1) + (_radius + 1); //第(i，j)个点圆心横坐标
+          double rX = j * 2 * (_radius + 1) + (_radius + 1); //第(i，j)个点圆心横坐标//相当于圆点半径比画出来的大1dp，显示出间隔
           double rY = i * 2 * (_radius + 1) + (_radius + 1); //第(i，j)个点圆心纵坐标
           canvas.translate(rX, rY);
           canvas.drawPath(_path, _paint);

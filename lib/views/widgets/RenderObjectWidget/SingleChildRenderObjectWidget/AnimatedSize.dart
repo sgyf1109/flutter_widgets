@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-04-01
+/// create by 小官在江湖 on 2020-04-01
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
@@ -55,7 +55,7 @@ class _CustomAnimatedSizeState extends State<CustomAnimatedSize>
               alignment: Alignment.center,
               color: Colors.blue,
               child: Text(
-                '张风捷特烈',
+                '小官在江湖',
                 style: TextStyle(color: Colors.white),
               ),
             ),

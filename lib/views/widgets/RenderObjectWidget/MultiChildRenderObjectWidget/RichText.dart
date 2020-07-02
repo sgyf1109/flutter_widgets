@@ -29,7 +29,7 @@ class CustomRichText extends StatelessWidget {
       child: RichText(
           text: TextSpan(
               children: str
-                  .split("")
+                  .split("")//获取每一个字符
                   .map((str) => TextSpan(
                       text: str,
                       style: TextStyle(
@@ -53,8 +53,8 @@ class RichTextWithWidget extends StatelessWidget {
       text: TextSpan(
         text: 'hello ',
         style: TextStyle(color: Colors.black, fontSize: 18),
-        children: <InlineSpan>[
-          WidgetSpan(
+        children: <InlineSpan>[//文字片段，类型 InlineSpan，通常我们会用TextSpan（它是InlineSpan的子类）
+          WidgetSpan(//承载普通组件
               child: Image.asset(
                 'assets/images/icon_head.png',
                 width: 30,

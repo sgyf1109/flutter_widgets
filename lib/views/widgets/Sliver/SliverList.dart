@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-30
+/// create by 小官在江湖 on 2020-03-30
 /// contact me by email 1981462002@qq.com
 /// 说明:
 //    {
@@ -34,7 +34,7 @@ class SliverListDemo extends StatelessWidget {
     );
   }
 
-  Widget _buildSliverList() => SliverList(
+  Widget _buildSliverList() => SliverList(//SliverList 高度自动,
         delegate: SliverChildBuilderDelegate(
             (_, int index) => Container(
                   alignment: Alignment.center,
@@ -58,7 +58,7 @@ class SliverListDemo extends StatelessWidget {
     return SliverAppBar(
       expandedHeight: 190.0,
       leading: _buildLeading(),
-      title: Text('张风捷特烈'),
+      title: Text('小官在江湖'),
       actions: _buildActions(),
       elevation: 5,
       pinned: true,

@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-24
+/// create by 小官在江湖 on 2020-03-24
 /// contact me by email 1981462002@qq.com
 /// 说明:
 ///
@@ -24,7 +24,7 @@ class CustomSimpleDialog extends StatelessWidget {
   final info = [
     '性别:    男     未婚',
     '微信:    zdl1994328',
-    "掘金:    张风捷特烈",
+    "掘金:    小官在江湖",
     "github:    toly1994328",
     "邮箱:    1981462008@qq.com",
   ];
@@ -36,7 +36,7 @@ class CustomSimpleDialog extends StatelessWidget {
         _buildSimpleDialog(context),
         Positioned(
             top: 70,
-            right: 30,
+            right: 45,
             child: _buildRaisedButton(context)),
 
       ],
@@ -76,10 +76,10 @@ class CustomSimpleDialog extends StatelessWidget {
         .map((str) => Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                SimpleDialogOption(
+                SimpleDialogOption(//简单对话框，可以显示附加的提示和操作，通常配合SimpleDialogOption一起使用
                   onPressed: () => print(str),
                   child: Container(
-                    width: double.infinity,
+                    width: double.infinity,//可以强制在宽度上撑满
                     child: Text(
                       str,
                       style: TextStyle(color: Color(0xff999999), fontSize: 16),
@@ -87,7 +87,7 @@ class CustomSimpleDialog extends StatelessWidget {
                   ),
                 ),
                 Divider(
-                  indent: 20,
+                  indent: 20,//缩紧,距左边距的距离
                   height: 12,
                   color: info.indexOf(str) == info.length - 1
                       ? Colors.transparent
@@ -112,7 +112,7 @@ class CustomSimpleDialog extends StatelessWidget {
         ),
         Expanded(
             child: Text(
-          "张风捷特烈",
+          "小官在江湖",
           style: TextStyle(fontSize: 18),
         )),
         CloseButton()

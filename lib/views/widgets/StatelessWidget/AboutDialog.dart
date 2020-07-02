@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-24
+/// create by 小官在江湖 on 2020-03-24
 /// contact me by email 1981462002@qq.com
 /// 说明:
 ///
@@ -49,7 +49,7 @@ class CustomAboutDialog extends StatelessWidget {
       applicationIcon: FlutterLogo(),
       applicationVersion: 'v0.0.1',
       applicationName: 'Flutter Unit',
-      applicationLegalese: 'Copyright© 2018-2020 张风捷特烈',
+      applicationLegalese: 'Copyright© 2018-2020 小官在江湖',
       children: <Widget>[
         Container(
             margin: EdgeInsets.only(top: 20),

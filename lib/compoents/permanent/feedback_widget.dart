@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-04-10
+/// create by 小官在江湖 on 2020-04-10
 /// contact me by email 1981462002@qq.com
 /// 说明:
 

@@ -7,7 +7,7 @@ import 'package:flutterwidgets/repositorys/widget_repository.dart';
 import 'collect_event.dart';
 import 'collect_state.dart';
 
-/// create by 张风捷特烈 on 2020-04-07
+/// create by 小官在江湖 on 2020-04-07
 /// contact me by email 1981462002@qq.com
 /// 说明:
 

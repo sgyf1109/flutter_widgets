@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-30
+/// create by 小官在江湖 on 2020-03-30
 /// contact me by email 1981462002@qq.com
 /// 说明:
 //    {
@@ -40,7 +40,7 @@ class CustomScrollViewDemo extends StatelessWidget {
     );
   }
 
-  Widget _buildSliverFixedExtentList() => SliverFixedExtentList(
+  Widget _buildSliverFixedExtentList() => SliverFixedExtentList(//SliverFixedExtentList 高度固定死.
         itemExtent: 60,
         delegate: SliverChildBuilderDelegate(
             (_, int index) => Container(
@@ -66,6 +66,7 @@ class CustomScrollViewDemo extends StatelessWidget {
 
   _buildSliverAppBar() {
     return SliverAppBar(
+      pinned: true,//是否置顶
       expandedHeight: 190.0,
       leading: Container(
           margin: EdgeInsets.all(10),
@@ -73,9 +74,9 @@ class CustomScrollViewDemo extends StatelessWidget {
       flexibleSpace: FlexibleSpaceBar(
         //伸展处布局
         titlePadding: EdgeInsets.only(left: 55, bottom: 15), //标题边距
-        collapseMode: CollapseMode.parallax, //视差效果
+        collapseMode: CollapseMode.parallax, //视差效果,背景不会跟着滚
         title: Text(
-          '张风捷特烈',
+          '小官在江湖',
           style: TextStyle(color: Colors.black, //标题
               shadows: [
                 Shadow(color: Colors.blue, offset: Offset(1, 1), blurRadius: 2)

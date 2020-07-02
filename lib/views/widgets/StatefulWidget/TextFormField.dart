@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-04-01
+/// create by 小官在江湖 on 2020-04-01
 /// contact me by email 1981462002@qq.com
 /// 说明: 
 //    {
@@ -42,9 +42,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                       border: OutlineInputBorder(),
                       labelText: 'username',
                     ),
-                    validator: _validateUsername,
-                    onFieldSubmitted: _onFieldSubmitted,
-                    onSaved: _onSaved,
+                    validator: _validateUsername,////按钮触发
+                    onFieldSubmitted: _onFieldSubmitted,//回车出发
+                    onSaved: _onSaved,//按钮触发
                   ),
                 ),
               ),

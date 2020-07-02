@@ -66,7 +66,7 @@ class _DenseListTileState extends State<DenseListTile> {
         selected: false,
         contentPadding: EdgeInsets.all(5),
         trailing: Icon(Icons.more_vert),
-        dense: _dense,
+        dense: _dense,//是否密排
         onTap: () => setState(() => _dense = !_dense),
       ),
     );

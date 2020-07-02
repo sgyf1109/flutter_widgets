@@ -62,22 +62,22 @@ class _FitImageState extends State<FitImage> {
 
   @override
   Widget build(BuildContext context) {
-    var imageLi = BoxFit.values
-        .toList()
-        .map((mode) => Column(children: <Widget>[
-              Container(
-                  margin: EdgeInsets.all(5),
-                  width: 100,
-                  height: 80,
-                  color: Colors.grey.withAlpha(88),
-                  child: Image(
-                      image: AssetImage(!_smallImage
-                          ? "assets/images/wy_300x200.jpg"
-                          : "assets/images/wy_30x20.jpg"),
-                      fit: mode)),
-              Text(mode.toString().split(".")[1])
-            ]))
-        .toList();
+    var imageLi = BoxFit.values.toList().map((mode) {
+      print(mode.toString());
+      return Column(children: <Widget>[
+        Container(
+            margin: EdgeInsets.all(5),
+            width: 100,
+            height: 80,
+            color: Colors.grey.withAlpha(88),
+            child: Image(
+                image: AssetImage(!_smallImage
+                    ? "assets/images/wy_300x200.jpg"
+                    : "assets/images/wy_30x20.jpg"),
+                fit: mode)),
+        Text(mode.toString().split(".")[1])
+      ]);
+    }).toList();
 
     return Wrap(
       children: [...imageLi, _buildSwitch()],
@@ -223,7 +223,7 @@ class CenterSliceImage extends StatelessWidget {
       height: 80,
       child: Image.asset(
         "assets/images/right_chat.png",
-        centerSlice: Rect.fromLTRB(9, 27, 60, 27 + 1.0),
+        centerSlice: Rect.fromLTRB(9, 27, 60,28),//centerSlice的作用是把普通的图片设置成类似于安卓中的.9图，用于图片拉伸，比如聊天的气泡。
         fit: BoxFit.fill,
       ),
     );

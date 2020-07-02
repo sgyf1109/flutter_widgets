@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-24
+/// create by 小官在江湖 on 2020-03-24
 /// contact me by email 1981462002@qq.com
 /// 说明:
 ///
@@ -90,12 +90,12 @@ class CustomAlertDialog extends StatelessWidget {
 
   Widget _buildContent() {
     return Column(
-      mainAxisSize: MainAxisSize.min,
+      mainAxisSize: MainAxisSize.min,//相当于warpcontent
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: Text(
-            '      FlutterUnit是【张风捷特烈】的开源项目，'
+            '      FlutterUnit是【小官在江湖】的开源项目，'
             '收录Flutter的200+组件，并附加详细介绍以及操作交互，'
             '希望帮助广大编程爱好者入门Flutter。'
             '更多知识可以关注掘金账号、公众号【编程之王】。',

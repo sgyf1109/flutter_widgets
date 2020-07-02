@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-26
+/// create by 小官在江湖 on 2020-03-26
 /// contact me by email 1981462002@qq.com
-/// 说明: 
+/// 说明:
 
 //    {
 //      "widgetId": 151,
@@ -43,35 +43,37 @@ class CustomTableRowInkWell extends StatelessWidget {
         border: TableBorder.all(
             color: Colors.orangeAccent, width: 1.0, style: BorderStyle.solid),
         children: data
-            .map((item) => TableRow(children: <Widget>[
-          TableRowInkWell(
-            onTap: () => print('onTap'),
-            onDoubleTap: () => print('onDoubleTap'),
-            onLongPress: () => print('onLongPress'),
-            onHighlightChanged: (v) => print('onHighlightChanged:$v'),
-            child: Center(
-                child: Text(
-                  item.name,
-                  style: TextStyle(color: Colors.blue),
-                )),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Center(child: Text(item.symbol)),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Center(child: Text(item.unitSymbol)),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Center(child: Text(item.unitName)),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Center(child: Text(item.unit)),
-          ),
-        ]))
+            .map((item){
+              return TableRow(children: <Widget>[
+                TableRowInkWell(
+                  onTap: () => print('onTap'),
+                  onDoubleTap: () => print('onDoubleTap'),
+                  onLongPress: () => print('onLongPress'),
+                  onHighlightChanged: (v) => print('onHighlightChanged:$v'),
+                  child: Center(
+                      child: Text(
+                        item.name,
+                        style: TextStyle(color: Colors.blue),
+                      )),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(child: Text(item.symbol)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(child: Text(item.unitSymbol)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(child: Text(item.unitName)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(child: Text(item.unit)),
+                ),
+              ]);
+        })
             .toList(),
       ),
     );
@@ -87,4 +89,3 @@ class _ItemBean {
 
   _ItemBean(this.name, this.symbol, this.unit, this.unitName, this.unitSymbol);
 }
-

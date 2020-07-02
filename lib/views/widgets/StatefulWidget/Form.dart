@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-31
+/// create by 小官在江湖 on 2020-03-31
 /// contact me by email 1981462002@qq.com
 /// 说明:
 //    {
@@ -35,7 +35,7 @@ class _CustomFormState extends State<CustomForm> {
               children: <Widget>[
                 Container(
                   width: 350,
-                  child: UnconstrainedBox(
+                  child: UnconstrainedBox(//不给child 设置约束
                     child: Container(
                       width: 200,
                       height: 70,
